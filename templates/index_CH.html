@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Meal Planner</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/nutrition_summary">Nutrition Summary</a></li>
+            <a href="/fitbit_auth">Connect Fitbit</a> |
+        <a href="/fitbit_data">View Fitbit Data</a>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Personalized Meal Planner and Nutrition Tracker</h1>
+        <form action="/generate_meal_plan" method="post">
+            <label for="dietary_preferences">Dietary Preferences:</label>
+            <select id="dietary_preferences" name="dietary_preferences" required>
+                <option value="balanced" selected>Balanced</option>
+                <option value="high-fiber">High-Fiber</option>
+                <option value="high-protein">High-Protein</option>
+                <option value="low-carb">Low-Carb</option>
+                <option value="low-fat">Low-Fat</option>
+                <option value="low-sodium">Low-Sodium</option>
+            </select><br><br>
+
+            <label for="health_goals">Health Goals:</label>
+            <input type="text" id="health_goals" name="health_goals" required><br><br>
+
+            <button type="submit">Generate Meal Plan</button>
+        </form>
+    </div>
+    
+</body>
+</html>
